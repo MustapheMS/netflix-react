@@ -92,3 +92,16 @@
   font-weight: bold;
   color: red;
 }
+
+.site-url {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px;
+  margin-bottom: 7px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

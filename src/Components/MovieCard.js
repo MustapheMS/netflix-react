@@ -1,14 +1,17 @@
-function MovieCard() {
+function MovieCard(props) {
+  //the join method array is used to create a new string separated by "|" character 
+  const genres = props.data.show.genres.join(' | ')
+  //the optional chain operator is used to access property object even if the object is null/undefined
   return (
     <div className="movie-card">
       <div className="movie-image">
-        <img
-          src="https://i.pinimg.com/originals/a2/34/75/a234753b69e3bd27b7f1d448956c38af.jpg"
-          alt="movie"
-        />
+      <img src={props.data.show.image?.medium}/> 
       </div>
-
-      <h3 className="movie-heading">Breaking Bad</h3>
+      <h3 className="movie-heading">{props.data.show.name}</h3>
+      <div className="movie-rating">⭐{props.data.show.rating.average || '3.4'}</div>
+      <h5 className="movie-genre">{genres}</h5>
+      <button className="site-url"><a href={props.data.show.url}>Official Site</a></button>
+      
     </div>
   );
 }

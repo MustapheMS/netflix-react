@@ -1,10 +1,14 @@
-function Search() {
+import { useState } from "react";
+
+function Search(props) {
+  const [search, setSearch] = useState('');
   return (
     <div className="search-section">
-      Search for your favorite shows
-      <div classNameName="search-input">
-        <input className="search-box" type="text" placeholder="Search" />
-        <button className="btn-search">Search</button>
+      Search for your favorite TV shows
+      <div className="search-input">
+        <input className="search-box" type="text" placeholder="Search Your Shows" onChange={(e)=>setSearch(e.target.value)}/>
+        <button className="btn-search" onClick={()=> props.handleOnSearch(search)}>Search</button>
+        
       </div>
     </div>
   );
