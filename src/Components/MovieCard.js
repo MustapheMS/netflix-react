@@ -1,7 +1,7 @@
 function MovieCard(props) {
   //the join method array is used to create a new string separated by "|" character 
   const genres = props.data.show.genres.join(' | ')
-  //the optional chain operator is used to access property object even if the object is null/undefined
+  
   return (
     <div className="movie-card">
       <div className="movie-image">
